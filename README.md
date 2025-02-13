@@ -1,7 +1,6 @@
 # Tower-Defense
 ## Autore
-Tincani Lorenzo, 4IA, "G. Bearzi"
-lorenzo.tincani@allievi.bearzi.it
+Tincani Lorenzo, 4IA, "G. Bearzi"\\lorenzo.tincani@allievi.bearzi.it
 
 ## Presentazione del progetto
 Il progetto consiste nella realizzazione di un gioco Tower Defense in Java da eseguire nel terminale. Il giocatore controlla un personaggio che deve piazzare torri per difendere il proprio regno da ondate di nemici sempre più difficili.
