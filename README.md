@@ -1,7 +1,6 @@
 # Tower-Defense
 ## Autore
 Tincani Lorenzo, 4IA, "G. Bearzi"
-
 lorenzo.tincani@allievi.bearzi.it
 
 ## Presentazione del progetto
