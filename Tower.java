@@ -27,5 +27,5 @@ public abstract class Tower {
         return radius;
     }
 
-    public abstract void arrack(Enemy enemy);
+    public abstract void attack(Enemy enemy);
 }

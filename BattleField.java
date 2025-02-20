@@ -17,7 +17,7 @@ public class BattleField {
         for (Tower tower : towers) {
             for (Enemy enemy : wave.getEnemies()) {
                 if (enemy.isAlive()) {
-                    // tower.attack(enemy);
+                    tower.attack(enemy);
                     // finire di implementare attacca in tower.java
                 }
             }
