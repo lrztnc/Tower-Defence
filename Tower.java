@@ -1,4 +1,4 @@
-public /*abstract*/ class Tower {
+public abstract class Tower {
     protected String name;
     protected int cost;
     protected int damage;
@@ -27,8 +27,5 @@ public /*abstract*/ class Tower {
         return radius;
     }
 
-    
-
-    // public abstract void attact();
-    // Inserire nemico
+    public abstract void arrack(Enemy enemy);
 }
