@@ -7,7 +7,11 @@ public class Wave {
     public Wave(int numberOfEnemies) {
         enemies = new ArrayList<>();
         for (int i = 0; i < numberOfEnemies; i++) {
-            // enemies.add(/*aggiungere nemico bsae */))
+            enemies.add(new StandardEnemy());
         }
+    }
+
+    public List<Enemy> getEnemies() {
+        return enemies;
     }
 }
