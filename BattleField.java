@@ -18,10 +18,11 @@ public class BattleField {
             for (Enemy enemy : wave.getEnemies()) {
                 if (enemy.isAlive()) {
                     tower.attack(enemy);
-                    // finire di implementare attacca in tower.java
-                }
+                    if (!enemy.isAlive()) {
+                        System.out.println(enemy.getName() + " has been defeated");
+                    }
+                } 
             }
         }
     }
-    // Parte di ondata da implementare 
 }
