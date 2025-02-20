@@ -43,7 +43,4 @@ public class Player {
         }
     }
 
-    public boolean gameOver() {
-        return this.life <= 0;
-    }
-}
+  
