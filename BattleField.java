@@ -3,6 +3,7 @@ import java.util.List;
 
 public class BattleField {
     private List<Tower> towers;
+    private static final int lato = 10;
 
     public BattleField() {
         this.towers = new ArrayList<>();
@@ -11,6 +12,16 @@ public class BattleField {
     public void placeTower(Tower tower) {
         towers.add(tower);
         System.out.println("Tower " + tower.getName() + " placed on the battle field.");
+    }
+
+    public void initilzeBattleField () {
+        int x = 0;
+        int y = 0;
+        for (int i = 0; i < lato; i++) {
+            for (int j = 0; j < lato; j++) {
+                
+            }
+        }
     }
 
     public void defend (Wave wave) {
