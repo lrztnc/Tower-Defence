@@ -13,8 +13,6 @@ public class BattleField {
         System.out.println("Tower " + tower.getName() + " placed on the battle field.");
     }
 
-    
-
     public void defend (Wave wave) {
         for (Tower tower : towers) {
             for (Enemy enemy : wave.getEnemies()) {
