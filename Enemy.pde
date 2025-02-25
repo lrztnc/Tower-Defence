@@ -3,17 +3,28 @@ abstract class Enemy {
     int health;
     float speed;
     color enemyColor;
+    int damage; 
+    float attackRange; 
 
-    Enemy(int x, int y, int health, float speed, color enemyColor) {
+    Enemy(int x, int y, int health, float speed, color enemyColor, int damage, float attackRange) {
         this.x = x;
         this.y = y;
         this.health = health;
         this.speed = speed;
         this.enemyColor = enemyColor;
+        this.damage = damage;
+        this.attackRange = attackRange;
     }
 
     void move() {
-        x += speed; 
+        x += speed;
+        
+        for (Tower tower : towers) {
+            float distance = dist(x, y, tower.x, tower.y);
+            if (distance < attackRange) {
+                tower.health -= damage;
+            }
+        }
     }
 
     void display() {

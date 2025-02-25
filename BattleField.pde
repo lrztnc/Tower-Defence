@@ -1,3 +1,5 @@
+import processing.core.*;
+
 class BattleField {
     ArrayList<Tower> towers;
 
@@ -18,6 +20,18 @@ class BattleField {
     void addTower(Tower tower) {
         towers.add(tower);
     }
+    
+    boolean isValidPosition(int x, int y) {
+    
+    if (x < 0 || x > width || y < 0 || y > height) return false;
+    
+    
+    for (Tower t : towers) {
+        if (dist(x, y, t.x, t.y) < 30) return false; 
+    }
+    
+    return true;
+}  
 
     boolean hasLost() {
         for (Tower tower : towers) {

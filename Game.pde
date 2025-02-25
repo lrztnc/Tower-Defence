@@ -8,6 +8,7 @@ int waveDelay = 3000;
 int lastWaveTime;
 boolean gameOver = false;
 String message = "";
+ArrayList<Tower> towers = new ArrayList<>(); 
 
 void setup() {
     size(800, 600);
@@ -58,6 +59,22 @@ void draw() {
         waves.get(currentWaveIndex).spawnEnemies();
         waveActive = true;
     }
+    
+    
+    for (int i = towers.size()-1; i >= 0; i--) {
+        Tower t = towers.get(i);
+        
+        if (t.health <= 0) {
+            towers.remove(i);
+            continue;
+        }
+        
+        t.attackEnemies(); 
+        t.display();
+    }
+    
+    
+    if (battlefield.hasLost()) gameOver = true;
 
     checkGameOver();
 
@@ -98,9 +115,11 @@ void mousePressed() {
     }
 
     if (mouseButton == LEFT) {
-        player.placeTower(mouseX, mouseY, battlefield, "standard");
+        Tower newTower = player.placeTower(mouseX, mouseY, battlefield, "standard");
+        if (newTower != null) towers.add(newTower); 
     } else if (mouseButton == RIGHT) {
-        player.placeTower(mouseX, mouseY, battlefield, "powerful");
+        Tower newTower = player.placeTower(mouseX, mouseY, battlefield, "powerful");
+        if (newTower != null) towers.add(newTower); 
     }
 }
 
