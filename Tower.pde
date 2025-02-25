@@ -1,11 +1,13 @@
 abstract class Tower {
     int x, y, health;
-    int range = 100; // Raggio di attacco della torre
+    int range = 100;
+    color towerColor;
 
-    Tower(int x, int y) {
+    Tower(int x, int y, color towerColor) {
         this.x = x;
         this.y = y;
         this.health = 100;
+        this.towerColor = towerColor;
     }
 
     abstract void attack(Enemy enemy);
@@ -15,17 +17,17 @@ abstract class Tower {
             Enemy enemy = enemies.get(i);
             float distance = dist(x, y, enemy.x, enemy.y);
 
-            if (distance < range) { // Se il nemico è nel raggio d'azione
+            if (distance < range) {
                 attack(enemy);
                 if (enemy.health <= 0) {
-                    enemies.remove(i); // Rimuovi nemico se la vita è zero
+                    enemies.remove(i);
                 }
             }
         }
     }
 
     void display() {
-        fill(0, 0, 255);
+        fill(towerColor);
         rect(x, y, 30, 30);
         fill(255, 0, 0);
         rect(x, y - 10, health / 2, 5);

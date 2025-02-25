@@ -10,8 +10,11 @@ class Player {
         text("Money: " + money, 10, 20);
     }
 
-    void placeTower(int x, int y, BattleField battlefield) {
-        if (money >= 20) {
+    void placeTower(int x, int y, BattleField battlefield, String type) {
+        if (type.equals("standard") && money >= 10) {
+            battlefield.addTower(new StandardTower(x, y));
+            money -= 10;
+        } else if (type.equals("powerful") && money >= 20) {
             battlefield.addTower(new PowerfulTower(x, y));
             money -= 20;
         }
