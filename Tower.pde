@@ -1,27 +1,34 @@
 abstract class Tower {
     int x, y, health;
-    int range = 100;
+    int range;
     color towerColor;
 
-    Tower(int x, int y, color towerColor) {
+    Tower(int x, int y, color towerColor, int range) {
         this.x = x;
         this.y = y;
         this.health = 100;
         this.towerColor = towerColor;
+        this.range = range;
     }
 
     abstract void attack(Enemy enemy);
 
     void attackEnemies() {
-        for (int i = enemies.size() - 1; i >= 0; i--) {
-            Enemy enemy = enemies.get(i);
-            float distance = dist(x, y, enemy.x, enemy.y);
+        Enemy closestEnemy = null;
+        float closestDistance = range;
 
-            if (distance < range) {
-                attack(enemy);
-                if (enemy.health <= 0) {
-                    enemies.remove(i);
-                }
+        for (Enemy enemy : enemies) {
+            float distance = dist(x, y, enemy.x, enemy.y);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestEnemy = enemy;
+            }
+        }
+
+        if (closestEnemy != null) {
+            attack(closestEnemy);
+            if (closestEnemy.health <= 0) {
+                enemies.remove(closestEnemy);
             }
         }
     }
