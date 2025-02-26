@@ -5,7 +5,7 @@ Tincani Lorenzo, 4IA, "G. Bearzi"
 lorenzo.tincani@allievi.bearzi.it
 
 ## Presentazione del progetto
-Il progetto consiste nella realizzazione di un gioco Tower Defense in Java da eseguire nel terminale. Il giocatore controlla un personaggio che deve piazzare torri per difendere il proprio regno da ondate di nemici sempre più difficili.
+Il progetto consiste nella realizzazione di un gioco Tower Defense in Java da eseguire in modo grafico. Il giocatore controlla un personaggio che deve piazzare torri per difendere il proprio regno da ondate di nemici sempre più difficili.
 
 L'obiettivo del gioco è resistere il più possibile, gestendo risorse economiche per acquistare e potenziare torri difensive. Il gioco sfrutta concetti di programmazione orientata agli oggetti (OOP) come interfacce, polimorfismo e classi astratte per una progettazione modulare e scalabile.
 
