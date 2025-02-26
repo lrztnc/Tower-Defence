@@ -15,3 +15,33 @@ abstract class Tower {
     }
 
     abstract void setAttributes();
+
+    void update(ArrayList<Enemy> enemyList) {
+        if (cooldown > 0) {
+            cooldown--;
+        }
+
+        if (cooldown <= 0) {
+            Enemy targetEnemy = null;
+            for (Enemy e : enemyList) {
+                if (e.health > 0) {
+                    float d = PVector.dist(this.pos, e.pos);
+                if (d <= range) {
+                    targetEnemy = e;
+                    break;
+                }
+                }
+            }
+
+        if (targetEnemy != null) {
+            targetEnemy.health -= damage;
+            cooldown = fireRate;
+            lastShotTarget = targetEnemy.pos.copy();
+            shotEffectTimer = 5;
+        }
+
+    }
+  }
+
+  abstract void draw();
+}
