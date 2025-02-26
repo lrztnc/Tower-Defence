@@ -5,20 +5,21 @@ class StandardTower extends Tower {
     }
 
     void setAttributes() {
-        range = 150;
-        damage = 2;
-        fireRate = 180;
+        range = 100;
+        damage = 1;
+        fireRate = 90;
     }
 
-     void draw() {
-        fill(255, 255, 0);
+    void draw() {
+        fill(255, 0, 255);
         noStroke();
-        rect(pos.x, pos.y, 20, 20);
-        
+        float size = 20;
+        triangle(pos.x, pos.y - size / 2, pos.x - size / 2, pos.y + size / 2, pos.x + size / 2, pos.y + size / 2);
+    
         if (shotEffectTimer > 0 && lastShotTarget != null) {
             stroke(255, 255, 255);
             line(pos.x, pos.y, lastShotTarget.x, lastShotTarget.y);
             shotEffectTimer--;
         }
-    } 
+    }
 }

@@ -144,7 +144,7 @@ void draw() {
   }
 
   void spawnEnemy() {
-      Enemy newEnemy = (random(1) < 0.5) ? new EnemyType1() : new EnemyType2();
+      Enemy newEnemy = (random(1) < 0.5) ? new StandardEnemy() : new PowerfulEnemy();
       enemies.add(newEnemy);
       enemiesSpawned++;
   }
@@ -165,10 +165,10 @@ void draw() {
 
   void keyPressed() {
       if (key == '1' && coins >= costTower1 && !isOnPath(mouseX, mouseY)) {
-          towers.add(new TowerType1(mouseX, mouseY));
+          towers.add(new StandardTower(mouseX, mouseY));
           coins -= costTower1;
       } else if (key == '2' && coins >= costTower2 && !isOnPath(mouseX, mouseY)) {
-          towers.add(new TowerType2(mouseX, mouseY));
+          towers.add(new PowerfulTower(mouseX, mouseY));
           coins -= costTower2;
       }
   }
