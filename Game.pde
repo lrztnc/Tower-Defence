@@ -41,7 +41,6 @@ void setup() {
         new PVector(width - margin, height - margin)
     };
 
-    // Imposta la posizione del pulsante "Ricomincia"
     buttonWidth = 180;
     buttonHeight = 40;
     buttonX = width / 2;
