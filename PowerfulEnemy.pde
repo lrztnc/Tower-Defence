@@ -7,17 +7,18 @@ class PowerfulEnemy extends Enemy {
     void setAttributes() {
         maxHealth = 2;
         health = maxHealth;
-        speed = 1.5 + (wave - 1) * 0.2;
-        reward = 20;
+        speed = 1.5 + (wave - 1) * 0.2; // aumento della velocità
+        reward = 20; // moente quando viene ucciso
     }
 
     void draw() {
-        fill(0, 0, 200);
+        fill(0, 0, 200); // blu
         noStroke();
         ellipse(pos.x, pos.y, 15, 15);
         drawHealthBar();
     }
 
+    // barra della vita del nemico
     void drawHealthBar() {
         float barWidth = 20;
         float barHeight = 4;
