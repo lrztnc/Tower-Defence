@@ -113,8 +113,7 @@ void draw() {
     text("Vite: " + lives, 10, 10);
     text("Monete: " + coins, 10, 30);
     text("Ondata: " + wave, 10, 50);
-    String towerName = (currentTowerType == 1) ? "Torre Tipo1" : "Torre Tipo2";
-    text("Torre selezionata: " + towerName, 10, 70);
+    
 
     if (gameOver()) {
         fill(0, 150);
