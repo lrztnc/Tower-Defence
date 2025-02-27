@@ -52,17 +52,20 @@ void setup() {
 void draw() {
     background(100, 200, 100);
 
-    fill(150, 100, 50);
+    fill(150, 100, 50); // si disegna il percorso
     noStroke();
     for (int i = 0; i < pathPoints.length - 1; i++) {
         PVector a = pathPoints[i];
         PVector b = pathPoints[i + 1];
-        if (abs(a.y - b.y) < 1) {
+
+        if (abs(a.y - b.y) < 1) { // se il percorso è orizzontale
             float y = a.y;
             float xStart = min(a.x, b.x);
             float xEnd = max(a.x, b.x);
             rect((xStart + xEnd) / 2, y, (xEnd - xStart) + pathWidth, pathWidth);
-        } else if (abs(a.x - b.x) < 1) {
+
+        } else if (abs(a.x - b.x) < 1) { // se il percorso è verticlae
+            
             float x = a.x;
             float yStart = min(a.y, b.y);
             float yEnd = max(a.y, b.y);
@@ -70,16 +73,19 @@ void draw() {
         }
     }
 
+    // spqwn dei nemici
     if (!gameOver() && enemiesSpawned < enemiesToSpawn) {
         if (frameCount % spawnInterval == 0) {
             spawnEnemy();
         }
     }
 
+
     for (int i = enemies.size() - 1; i >= 0; i--) {
         Enemy e = enemies.get(i);
         e.move();
-        if (e.isAtEnd()) {
+
+        if (e.isAtEnd()) { // se il nemico raggiunge la fine viene tolta la vita
             enemies.remove(i);
             lives--;
             if (lives <= 0) {
@@ -95,9 +101,10 @@ void draw() {
 
     for (int i = enemies.size() - 1; i >= 0; i--) {
         Enemy e = enemies.get(i);
+
         if (e.health <= 0) {
-            coins += e.reward;
-            enemies.remove(i);
+            coins += e.reward; // vengono date monete
+            enemies.remove(i); // i nemici sconfitti vengono tolti
         }
     }
 
@@ -113,7 +120,7 @@ void draw() {
     text("Monete: " + coins, 10, 30);
     text("Ondata: " + wave, 10, 50);
     
-
+    // schermata di gameover
     if (gameOver()) {
         fill(0, 150);
         rect(width / 2, height / 2, width, height);
@@ -130,8 +137,9 @@ void draw() {
         text("Ricomincia", buttonX, buttonY);
         textAlign(LEFT, TOP);
         textSize(14);
+
     } else if (enemies.size() == 0 && enemiesSpawned >= enemiesToSpawn) {
-        startWave(wave + 1);
+        startWave(wave + 1); // se non è gameover da la prossima ondata
     }
 }
 
@@ -161,7 +169,7 @@ void mousePressed() {
     }
 }
 
-void keyPressed() {
+void keyPressed() { 
     if (key == '1' && coins >= costTower1 && !isOnPath(mouseX, mouseY)) {
         towers.add(new StandardTower(mouseX, mouseY));
         coins -= costTower1;
