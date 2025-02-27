@@ -174,7 +174,7 @@ void draw() {
 
   void restartGame() {
       lives = 3;
-      coins = 20;
+      coins = 45;
       wave = 1;
       enemies.clear();
       towers.clear();
