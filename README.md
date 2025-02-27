@@ -62,4 +62,4 @@ Il progetto è organizzato in diverse classi:
 - **Uso degli OOP**: per garentire flessibilità e riutilizzabilità del codice.
 
 ## Diagramma UML
-.
+https://lucid.app/lucidchart/7d3a1c9f-a4e6-4cfa-b3fe-2b462e7c93d5/edit?viewport_loc=-2892%2C1466%2C1785%2C1073%2C0_0&invitationId=inv_db297146-efc0-404e-bef7-ee3baf14f79b
