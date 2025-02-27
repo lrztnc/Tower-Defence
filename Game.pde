@@ -3,7 +3,7 @@ import java.util.ArrayList;
 ArrayList<Enemy> enemies;
 ArrayList<Tower> towers;
 int lives = 3;
-int coins = 100;
+int coins = 150;
 int wave = 1;
 
 int enemiesToSpawn;
@@ -12,8 +12,8 @@ int spawnInterval = 60;
 int spawnTimer = 0;
 
 int currentTowerType = 1;
-int costTower1 = 10;
-int costTower2 = 15;
+int costTower1 = 50;
+int costTower2 = 150;
 
 float pathWidth = 40;
 PVector[] pathPoints;
@@ -174,7 +174,7 @@ void draw() {
 
   void restartGame() {
       lives = 3;
-      coins = 45;
+      coins = 150;
       wave = 1;
       enemies.clear();
       towers.clear();

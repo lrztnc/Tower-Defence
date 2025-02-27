@@ -8,7 +8,7 @@ class StandardEnemy extends Enemy {
         maxHealth = 4;
         health = maxHealth;
         speed = 1.0 + (wave - 1) * 0.2;
-        reward = 2;
+        reward = 10;
     }
 
     void draw() {

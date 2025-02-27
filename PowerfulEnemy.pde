@@ -8,7 +8,7 @@ class PowerfulEnemy extends Enemy {
         maxHealth = 2;
         health = maxHealth;
         speed = 1.5 + (wave - 1) * 0.2;
-        reward = 1;
+        reward = 20;
     }
 
     void draw() {
