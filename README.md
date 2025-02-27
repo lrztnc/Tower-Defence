@@ -5,9 +5,9 @@ Tincani Lorenzo, 4IA, "G. Bearzi"
 lorenzo.tincani@allievi.bearzi.it
 
 ## Presentazione del progetto
-Il progetto consiste nella realizzazione di un gioco Tower Defense in Java da eseguire in modo grafico. Il giocatore controlla un personaggio che deve piazzare torri per difendere il proprio regno da ondate di nemici sempre più difficili.
+Il progetto consiste nella realizzazione di un gioco Tower Defense in Java da eseguire in modo grafico. Il giocatore controlla un personaggio che deve piazzare torri per difendere il luogo che i nemici voglio raggiungere, ma le ondate si faranno sempre più difficili.
 
-L'obiettivo del gioco è resistere il più possibile, gestendo risorse economiche per acquistare e potenziare torri difensive. Il gioco sfrutta concetti di programmazione orientata agli oggetti (OOP) come interfacce, polimorfismo e classi astratte per una progettazione modulare e scalabile.
+L'obiettivo del gioco è resistere il più possibile, gestendo risorse economiche per acquistare e potenziare torri difensive. Il gioco sfrutta concetti di programmazione orientata agli oggetti (OOP) come polimorfismo e classi astratte per una progettazione modulare e scalabile.
 
 ## Requisiti funzionali
 1. **Gestione del personaggio**:
@@ -36,8 +36,23 @@ L'obiettivo del gioco è resistere il più possibile, gestendo risorse economich
 
 ## Requisiti non funzionali
 - **Modularietà**: il codice deve essere suddiviso in più classi, per acquisire scalabilità.
-- **Utilizzo deli OOP**: il progetto deve contenere le interfacce, le classi astratte e l'uso del polimorfismo.
-Da finire
+- **Utilizzo deli OOP**: il progetto deve contenere le classi astratte e l'uso del polimorfismo.
+
+## Struttura del codice
+Il progetto è organizzato in diverse classi:
+- **Game.pde**: gestisce la lgica principale del gioco.
+
+- **Tower.pde**: è la classe che contiene le funzioni comuni a tutte le torri.
+
+- **StandardTower.pde**: classe che gestisce la torre base.
+
+- **PowerfulTower.pde**: classe che gestisce la torre potenziata.
+
+- **Enemy.pde**: è la classe che contiene le funzioni comuni a tutti i nemici.
+
+- **StandardEnemy.pde**: classe che gestisce i nemici base.
+
+- **PowerfulEnemy.pde**: classe che gestisce i nemici potenziata.
 
 ## Scelte Progettuali
 Da fare
