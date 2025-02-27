@@ -16,6 +16,7 @@ class StandardTower extends Tower {
         float size = 20;
         triangle(pos.x, pos.y - size / 2, pos.x - size / 2, pos.y + size / 2, pos.x + size / 2, pos.y + size / 2);
     
+        // linea dello sparo
         if (shotEffectTimer > 0 && lastShotTarget != null) {
             stroke(255, 255, 255);
             line(pos.x, pos.y, lastShotTarget.x, lastShotTarget.y);

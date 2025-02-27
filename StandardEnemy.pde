@@ -7,15 +7,15 @@ class StandardEnemy extends Enemy {
     void setAttributes() {
         maxHealth = 4;
         health = maxHealth;
-        speed = 1.0 + (wave - 1) * 0.2;
-        reward = 10;
+        speed = 1.0 + (wave - 1) * 0.2; // velcoità
+        reward = 10; // moente quando viene ucciso
     }
 
     void draw() {
         fill(200, 0, 0);
         stroke(0);
         rect(pos.x, pos.y, 20, 20);
-        drawHealthBar();
+        drawHealthBar(); // barra della salute
     }
 
      void drawHealthBar() {

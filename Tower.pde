@@ -1,11 +1,11 @@
 abstract class Tower {
-    PVector pos;
+    PVector pos; // posizione della torre
     float range;
     int damage;
     int fireRate;
-    int cooldown;
-    PVector lastShotTarget;
-    int shotEffectTimer;
+    int cooldown; // colpo da ricaricare
+    PVector lastShotTarget; // lultimo shottato
+    int shotEffectTimer; // tiem per leffetto del colpo
 
     public Tower(float x, float y) {
         this.pos = new PVector(x, y);
@@ -26,22 +26,23 @@ abstract class Tower {
             for (Enemy e : enemyList) {
                 if (e.health > 0) {
                     float d = PVector.dist(this.pos, e.pos);
-                if (d <= range) {
+                if (d <= range) { // se il nemico è nel range viene sparato
                     targetEnemy = e;
                     break;
                 }
                 }
             }
 
+        // 
         if (targetEnemy != null) {
-            targetEnemy.health -= damage;
-            cooldown = fireRate;
-            lastShotTarget = targetEnemy.pos.copy();
+            targetEnemy.health -= damage; // toglie vita 
+            cooldown = fireRate; // resettar eil tempo di ricarica
+            lastShotTarget = targetEnemy.pos.copy(); // salvare la posizione del bersaglio
             shotEffectTimer = 5;
         }
 
     }
   }
 
-  abstract void draw();
+  abstract void draw(); // disegnare torre
 }
