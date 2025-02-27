@@ -55,4 +55,9 @@ Il progetto è organizzato in diverse classi:
 - **PowerfulEnemy.pde**: classe che gestisce i nemici potenziata.
 
 ## Scelte Progettuali
-Da fare
+- **Sistema di ereditariertà**: per definire torri e nemici con caratteristiche specifiche.
+
+- **Bilanciamento della difficoltà**: incremento progressivo della forza dei nemici.
+
+- **Uso degli OOP**: per garentire flessibilità e riutilizzabilità del codice.
+
