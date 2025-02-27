@@ -62,4 +62,3 @@ Il progetto è organizzato in diverse classi:
 - **Uso degli OOP**: per garentire flessibilità e riutilizzabilità del codice.
 
 ## Diagramma UML
-.
