@@ -133,63 +133,63 @@ void draw() {
     } else if (enemies.size() == 0 && enemiesSpawned >= enemiesToSpawn) {
         startWave(wave + 1);
     }
-  }
+}
 
-  void startWave(int waveNumber) {
-      wave = waveNumber;
-      enemiesSpawned = 0;
-      enemiesToSpawn = 4 + waveNumber;
-  }
+void startWave(int waveNumber) {
+    wave = waveNumber;
+    enemiesSpawned = 0;
+    enemiesToSpawn = 4 + waveNumber;
+}
 
-  void spawnEnemy() {
-      Enemy newEnemy = (random(1) < 0.5) ? new StandardEnemy() : new PowerfulEnemy();
-      enemies.add(newEnemy);
-      enemiesSpawned++;
-  }
+void spawnEnemy() {
+    Enemy newEnemy = (random(1) < 0.5) ? new StandardEnemy() : new PowerfulEnemy();
+    enemies.add(newEnemy);
+    enemiesSpawned++;
+}
 
-  boolean gameOver() {
-      return lives <= 0;
-  }
+boolean gameOver() {
+    return lives <= 0;
+}
 
-  void mousePressed() {
-      if (gameOver()) {
-          if (mouseX > buttonX - buttonWidth / 2 && mouseX < buttonX + buttonWidth / 2 &&
-              mouseY > buttonY - buttonHeight / 2 && mouseY < buttonY + buttonHeight / 2) {
-              restartGame();
-          }
-          return;
-      }
-  }
+void mousePressed() {
+    if (gameOver()) {
+        if (mouseX > buttonX - buttonWidth / 2 && mouseX < buttonX + buttonWidth / 2 &&
+            mouseY > buttonY - buttonHeight / 2 && mouseY < buttonY + buttonHeight / 2) {
+            restartGame();
+        }
+        return;
+    }
+}
 
-  void keyPressed() {
-      if (key == '1' && coins >= costTower1 && !isOnPath(mouseX, mouseY)) {
-          towers.add(new StandardTower(mouseX, mouseY));
-          coins -= costTower1;
-      } else if (key == '2' && coins >= costTower2 && !isOnPath(mouseX, mouseY)) {
-          towers.add(new PowerfulTower(mouseX, mouseY));
-          coins -= costTower2;
-      }
-  }
+void keyPressed() {
+    if (key == '1' && coins >= costTower1 && !isOnPath(mouseX, mouseY)) {
+        towers.add(new StandardTower(mouseX, mouseY));
+        coins -= costTower1;
+    } else if (key == '2' && coins >= costTower2 && !isOnPath(mouseX, mouseY)) {
+        towers.add(new PowerfulTower(mouseX, mouseY));
+        coins -= costTower2;
+    }
+}
 
-  void restartGame() {
-      lives = 3;
-      coins = 150;
-      wave = 1;
-      enemies.clear();
-      towers.clear();
-      enemiesSpawned = 0;
-      startWave(1);
-  }
+void restartGame() {
+    lives = 3;
+    coins = 150;
+    wave = 1;
+    enemies.clear();
+    towers.clear();
+    enemiesSpawned = 0;
+    startWave(1);
+}
 
-  boolean isOnPath(int x, int y) {
-      for (int i = 0; i < pathPoints.length - 1; i++) {
-          PVector a = pathPoints[i];
-          PVector b = pathPoints[i + 1];
-          if (abs(a.y - b.y) < 1 && abs(y - a.y) < pathWidth / 2 && x >= min(a.x, b.x) - pathWidth / 2 && x <= max(a.x, b.x) + pathWidth / 2) {
-              return true;
-          } else if (abs(a.x - b.x) < 1 && abs(x - a.x) < pathWidth / 2 && y >= min(a.y, b.y) - pathWidth / 2 && y <= max(a.y, b.y) + pathWidth / 2) {
-              return true;
-          }
-      }
-      return false;
+boolean isOnPath(int x, int y) {
+    for (int i = 0; i < pathPoints.length - 1; i++) {
+        PVector a = pathPoints[i];
+        PVector b = pathPoints[i + 1];
+        if (abs(a.y - b.y) < 1 && abs(y - a.y) < pathWidth / 2 && x >= min(a.x, b.x) - pathWidth / 2 && x <= max(a.x, b.x) + pathWidth / 2) {
+            return true;
+        } else if (abs(a.x - b.x) < 1 && abs(x - a.x) < pathWidth / 2 && y >= min(a.y, b.y) - pathWidth / 2 && y <= max(a.y, b.y) + pathWidth / 2) {
+            return true;
+        }
+    }
+    return false;
 }
